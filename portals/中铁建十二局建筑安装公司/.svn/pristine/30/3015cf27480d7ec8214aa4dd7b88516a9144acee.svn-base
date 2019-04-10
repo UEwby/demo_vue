@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entity>
+  <description />
+  <isInherited>false</isInherited>
+  <alias>
+    <zh-CN>信息发布</zh-CN>
+  </alias>
+  <isUserDefine>false</isUserDefine>
+  <name>XXFBPoco</name>
+  <sysVersion>1.0.0.0</sysVersion>
+  <isObsolete>false</isObsolete>
+  <namespace>GTP.PortalDataService.WorkFlow</namespace>
+  <properties>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>主键</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>id</name>
+      <dataType>
+        <basicType>Long</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>标题</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>title</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>内容</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>remark</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>发布时间</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>createTime</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>发布人</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>creatorName</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>内容html</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>contentHtml</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>内容图片</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>contentImage</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>创建人ID</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>creatorId</name>
+      <dataType>
+        <basicType>Long</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+  </properties>
+</entity>

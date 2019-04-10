@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B0F67AC-B7A5-4428-BA5C-D106E5457359}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GTP.PortalDataService.Biz</RootNamespace>
+    <AssemblyName>GTP.PortalDataService.Biz</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\Studio\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GTP.Auth.Permission, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.DataService.Biz">
+      <HintPath>C:/Program Files (x86)/Glodon/GTP/applications/gtp-default/Biz/Assembly/System/GTP.DataService.Biz.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Org.Biz, Version=6.0.0.0, Culture=neutral, PublicKeyToken=61ed66325af2156c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Portal.Biz, Version=6.0.0.0, Culture=neutral, PublicKeyToken=61ed66325af2156c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Portal.Service, Version=6.0.0.0, Culture=neutral, PublicKeyToken=61ed66325af2156c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Services.Common.Biz, Version=6.0.0.0, Culture=neutral, PublicKeyToken=61ed66325af2156c, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Services.FileService.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Services.GSqlWraperLite, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Services.Identification.Context, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Services.Preference, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Services.Preference.Interface, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Workflow.Biz, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Workflow.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Workflow.Tasks, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GTP.Runtime.Biz">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Runtime.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Runtime.Common">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Runtime.EntityService">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Runtime.DataService">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Runtime.DataObject">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Runtime.Metadata">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Runtime.WebUI">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Runtime.GSql">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkFlow\Controllers\MessageController.cs" />
+    <Compile Include="WorkFlow\Controllers\TaskController.cs" />
+    <Compile Include="WorkFlow\Entities\DictPoco.cs" />
+    <Compile Include="WorkFlow\Entities\TASKTODOLISTPoco.cs" />
+    <Compile Include="WorkFlow\Entities\XXFBPoco.cs" />
+    <Compile Include="WorkFlow\Services\MessageService.cs" />
+    <Compile Include="WorkFlow\Services\MessageService.Readonly.cs">
+      <DependentUpon>MessageService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlow\Services\TaskService.cs" />
+    <Compile Include="WorkFlow\Services\TaskService.Readonly.cs">
+      <DependentUpon>TaskService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlow\Utils\XMHNamedSqlUtils.cs" />
+    <EmbeddedResource Include="BusinessAssemblyInfo.xml">
+      <Visible>False</Visible>
+      <SubType>Content</SubType>
+      <LogicalName>BusinessAssemblyInfo.xml</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GTP.Business.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

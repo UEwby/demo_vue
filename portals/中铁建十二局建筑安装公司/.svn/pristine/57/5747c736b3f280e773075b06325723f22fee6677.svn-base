@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namedsql>
+  <description />
+  <isInherited>false</isInherited>
+  <alias>
+    <zh-CN>XMH</zh-CN>
+  </alias>
+  <isUserDefine>false</isUserDefine>
+  <name>XMHNamedSql</name>
+  <sysVersion>1.0.0.0</sysVersion>
+  <isObsolete>false</isObsolete>
+  <namespace>GTP.PortalDataService.WorkFlow</namespace>
+  <statements>
+    <select>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>查询信息发布的信息</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>SelectXXFBtInfo</name>
+      <gsql>select TOP 5 
+irsInfos.F_ID  as id,
+irsInfos.F_TITLE as title,
+irsInfos.F_PURE_CONTENT as remark,
+TO_CHAR(F_SEND_DATE,'d') as createTime,
+irsInfos.F_CONTENT as contentHtml,
+F_CONTENT_IMAGE as contentImage,
+F_AUTHOR_NAME as creatorName,
+F_AUTHOR_ID as creatorId
+from T_LK_IRS_INFOS irsInfos
+inner join T_LK_IRS_COLUMN_INFO columnInfo on irsInfos.F_COLUMN_INFO_ID=columnInfo.F_ID
+where columnInfo.F_COLUMN_PAGE_CODE=:columnCode and F_STATE=3 and F_PARENTID is null
+order by F_I_ORDER asc,F_SEND_DATE desc
+</gsql>
+      <resultDataType>
+      </resultDataType>
+      <parameters>
+        <parameter>
+          <description />
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>columnCode</name>
+          <direction>In</direction>
+          <dataType>
+            <basicType>String</basicType>
+            <isCollection>false</isCollection>
+          </dataType>
+        </parameter>
+      </parameters>
+      <isCellection>true</isCellection>
+      <_isSupportTransaction>true</_isSupportTransaction>
+      <resultMap>ResultMap</resultMap>
+      <isNullable>false</isNullable>
+    </select>
+  </statements>
+  <resultMaps>
+    <resultMap>
+      <description />
+      <isInherited>false</isInherited>
+      <alias />
+      <isUserDefine>false</isUserDefine>
+      <name>ResultMap</name>
+      <results>
+        <result>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>name_1223819003</name>
+          <columnName>id</columnName>
+          <propertyName>id</propertyName>
+          <resultDataType>
+            <basicType>Long</basicType>
+            <isCollection>false</isCollection>
+          </resultDataType>
+          <isMultilingual>false</isMultilingual>
+        </result>
+        <result>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>name_297944839</name>
+          <columnName>title</columnName>
+          <propertyName>title</propertyName>
+          <resultDataType>
+            <basicType>String</basicType>
+            <isCollection>false</isCollection>
+          </resultDataType>
+          <isMultilingual>false</isMultilingual>
+        </result>
+        <result>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>name_402139327</name>
+          <columnName>remark</columnName>
+          <propertyName>remark</propertyName>
+          <resultDataType>
+            <basicType>String</basicType>
+            <isCollection>false</isCollection>
+          </resultDataType>
+          <isMultilingual>false</isMultilingual>
+        </result>
+        <result>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>name_762653372</name>
+          <columnName>createTime</columnName>
+          <propertyName>createTime</propertyName>
+          <resultDataType>
+            <basicType>String</basicType>
+            <isCollection>false</isCollection>
+          </resultDataType>
+          <isMultilingual>false</isMultilingual>
+        </result>
+        <result>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>name_1162902423</name>
+          <columnName>creatorName</columnName>
+          <propertyName>creatorName</propertyName>
+          <resultDataType>
+            <basicType>String</basicType>
+            <isCollection>false</isCollection>
+          </resultDataType>
+          <isMultilingual>false</isMultilingual>
+        </result>
+        <result>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>name_116814725</name>
+          <columnName>contentHtml</columnName>
+          <propertyName>contentHtml</propertyName>
+          <resultDataType>
+            <basicType>String</basicType>
+            <isCollection>false</isCollection>
+          </resultDataType>
+          <isMultilingual>false</isMultilingual>
+        </result>
+        <result>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>name_1556315634</name>
+          <columnName>contentImage</columnName>
+          <propertyName>contentImage</propertyName>
+          <resultDataType>
+            <basicType>String</basicType>
+            <isCollection>false</isCollection>
+          </resultDataType>
+          <isMultilingual>false</isMultilingual>
+        </result>
+        <result>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>name_1569039500</name>
+          <columnName>creatorId</columnName>
+          <propertyName>creatorId</propertyName>
+          <resultDataType>
+            <basicType>Long</basicType>
+            <isCollection>false</isCollection>
+          </resultDataType>
+          <isMultilingual>false</isMultilingual>
+        </result>
+      </results>
+      <complexDataType>
+        <basicType>Poco</basicType>
+        <fullTypeName>GTP.PortalDataService.WorkFlow.XXFBPoco</fullTypeName>
+        <isCollection>false</isCollection>
+      </complexDataType>
+    </resultMap>
+  </resultMaps>
+</namedsql>

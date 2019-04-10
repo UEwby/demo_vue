@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1f86d38e-5292-4f5a-9d4a-a1d9ec42fe63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin\</OutputPath>
+    <ProjectAlias>T平台.门户后台</ProjectAlias>
+    <ProjectDescription>
+    </ProjectDescription>
+    <Actions>SYS:AppFrame_Attachment_Action,SYS:AppFrame_DataSource_Action,SYS:AppFrame_Excel_Action,SYS:AppFrame_ExcelIO_Action,SYS:AppFrame_ItemReport_Action,SYS:AppFrame_ListReport_Action,SYS:AppFrame_WorkFlow_Action,SYS:AppFrame_Signature_Action,SYS:AppFrame_TreeGrid_Action,SYS:SysActions_QueryForm,SYS:APF2_Attachment_Action,SYS:APF2_Detail_Action,SYS:APF2_ExcelIO_Action,SYS:APF2_FormExpand_Action,SYS:APF2_GridView_Action,SYS:APF2_ItemReport_Action,SYS:APF2_ListReport_Action,SYS:APF2_Report_Issue,SYS:APF2_TreeGrid_Action,SYS:APF2_WorkFlow_Action</Actions>
+    <Name>GTP.PortalDataService.Metadata</Name>
+    <RootNamespace>GTP.PortalDataService</RootNamespace>
+    <PrefixCode>MHHT</PrefixCode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GTP.Business.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BusinessAssemblyInfo.xml">
+      <Visible>False</Visible>
+      <SubType>Content</SubType>
+      <LogicalName>BusinessAssemblyInfo.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetadataAssemblyInfo.xml">
+      <Visible>False</Visible>
+      <SubType>Content</SubType>
+      <LogicalName>MetadataAssemblyInfo.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduleLicense.xml">
+      <Visible>False</Visible>
+      <SubType>Content</SubType>
+      <LogicalName>moduleLicense.xml</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GTP.Business.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Packages.metadata.packages">
+      <SubType>Content</SubType>
+      <LogicPath>Packages.metadata.packages</LogicPath>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GTP.DataService.Metadata">
+      <Name>GTP.DataService.Metadata</Name>
+      <AssemblyName>GTP.DataService.Metadata.dll</AssemblyName>
+      <HintPath>C:\Program Files (x86)\Glodon\GTP\applications\gtp-default\Biz\Assembly\System\GTP.DataService.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Services.Common.Metadata">
+      <Name>GTP.Services.Common.Metadata</Name>
+      <AssemblyName>GTP.Services.Common.Metadata.dll</AssemblyName>
+      <HintPath>GTP.Services.Common.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GTP.Workflow.Metadata">
+      <Name>GTP.Workflow.Metadata</Name>
+      <AssemblyName>GTP.Workflow.Metadata.dll</AssemblyName>
+      <HintPath>GTP.Workflow.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WorkFlow\">
+      <LogicPath>WorkFlow\</LogicPath>
+    </Folder>
+  </ItemGroup>
+  <ItemGroup>
+    <VirtualFolder Include="WorkFlow\">
+      <LogicPath>WorkFlow\Poco\</LogicPath>
+    </VirtualFolder>
+    <VirtualFolder Include="WorkFlow\">
+      <LogicPath>WorkFlow\Service\</LogicPath>
+    </VirtualFolder>
+    <VirtualFolder Include="WorkFlow\">
+      <LogicPath>WorkFlow\NameSql\</LogicPath>
+    </VirtualFolder>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkFlow\Message.metadata.service">
+      <SubType>Content</SubType>
+      <LogicPath>WorkFlow\Service\Message.metadata.service</LogicPath>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkFlow\Task.metadata.service">
+      <SubType>Content</SubType>
+      <LogicPath>WorkFlow\Service\Task.metadata.service</LogicPath>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkFlow\DictPoco.metadata.poco">
+      <SubType>Content</SubType>
+      <LogicPath>WorkFlow\Poco\DictPoco.metadata.poco</LogicPath>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkFlow\TASKTODOLISTPoco.metadata.poco">
+      <SubType>Content</SubType>
+      <LogicPath>WorkFlow\Poco\TASKTODOLISTPoco.metadata.poco</LogicPath>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkFlow\XXFBPoco.metadata.poco">
+      <SubType>Content</SubType>
+      <LogicPath>WorkFlow\Poco\XXFBPoco.metadata.poco</LogicPath>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkFlow\XMHNamedSql.metadata.namedsql">
+      <SubType>Content</SubType>
+      <LogicPath>WorkFlow\NameSql\XMHNamedSql.metadata.namedsql</LogicPath>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

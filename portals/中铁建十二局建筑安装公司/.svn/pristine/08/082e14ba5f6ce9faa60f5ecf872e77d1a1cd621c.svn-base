@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetStamp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usercode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStampResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStampResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStampSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStamp" />
+  </wsdl:message>
+  <wsdl:message name="GetStampSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStampResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStampHttpGetIn">
+    <wsdl:part name="usercode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStampHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStampHttpPostIn">
+    <wsdl:part name="usercode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStampHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="GetSSOStampSoap">
+    <wsdl:operation name="GetStamp">
+      <wsdl:input message="tns:GetStampSoapIn" />
+      <wsdl:output message="tns:GetStampSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GetSSOStampHttpGet">
+    <wsdl:operation name="GetStamp">
+      <wsdl:input message="tns:GetStampHttpGetIn" />
+      <wsdl:output message="tns:GetStampHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GetSSOStampHttpPost">
+    <wsdl:operation name="GetStamp">
+      <wsdl:input message="tns:GetStampHttpPostIn" />
+      <wsdl:output message="tns:GetStampHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetSSOStampSoap" type="tns:GetSSOStampSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStamp">
+      <soap:operation soapAction="http://tempuri.org/GetStamp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetSSOStampSoap12" type="tns:GetSSOStampSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStamp">
+      <soap12:operation soapAction="http://tempuri.org/GetStamp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetSSOStampHttpGet" type="tns:GetSSOStampHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetStamp">
+      <http:operation location="/GetStamp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetSSOStampHttpPost" type="tns:GetSSOStampHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetStamp">
+      <http:operation location="/GetStamp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetSSOStamp">
+    <wsdl:port name="GetSSOStampSoap" binding="tns:GetSSOStampSoap">
+      <soap:address location="http://localhost:8888/WebService/Lk6SyncService/DirectToOthers/GetSSOStamp.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetSSOStampSoap12" binding="tns:GetSSOStampSoap12">
+      <soap12:address location="http://localhost:8888/WebService/Lk6SyncService/DirectToOthers/GetSSOStamp.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetSSOStampHttpGet" binding="tns:GetSSOStampHttpGet">
+      <http:address location="http://localhost:8888/WebService/Lk6SyncService/DirectToOthers/GetSSOStamp.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetSSOStampHttpPost" binding="tns:GetSSOStampHttpPost">
+      <http:address location="http://localhost:8888/WebService/Lk6SyncService/DirectToOthers/GetSSOStamp.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

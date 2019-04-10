@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <isInherited>false</isInherited>
+  <isUserDefine>false</isUserDefine>
+  <name>Packages</name>
+  <sysVersion>1.0.0.0</sysVersion>
+  <isObsolete>false</isObsolete>
+  <namespace>GTP.PortalDataService</namespace>
+  <multilangualFields>
+    <packageItem>
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>T平台</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>GTP</name>
+      <_fullName>GTP</_fullName>
+    </packageItem>
+    <packageItem>
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>门户后台</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>PortalDataService</name>
+      <_fullName>GTP.PortalDataService</_fullName>
+    </packageItem>
+    <packageItem>
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>WorkFlow</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>WorkFlow</name>
+      <extData>
+        <entry>
+          <value>true</value>
+          <inherited>false</inherited>
+          <key>ShowInModuleTree</key>
+        </entry>
+      </extData>
+      <_fullName>GTP.PortalDataService.WorkFlow</_fullName>
+    </packageItem>
+  </multilangualFields>
+</packages>

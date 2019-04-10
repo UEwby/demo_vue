@@ -1,0 +1,1 @@
+<%@ Application Inherits="GTP.Runtime.WebUI.Listeners.GTPWebApplication, GTP.Runtime.WebUI" Language="C#" %>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <description />
+  <isInherited>false</isInherited>
+  <alias>
+    <zh-CN>待阅服务</zh-CN>
+  </alias>
+  <isUserDefine>false</isUserDefine>
+  <name>Message</name>
+  <sysVersion>1.0.0.0</sysVersion>
+  <isObsolete>false</isObsolete>
+  <namespace>GTP.PortalDataService.WorkFlow</namespace>
+  <operations>
+    <operation>
+      <description>
+        <zh-CN>获取待阅任务个数(返回值：个数)</zh-CN>
+      </description>
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>获取待阅任务个数</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>GetToDoMessageCount</name>
+      <returnType>
+        <basicType>Integer</basicType>
+        <isCollection>false</isCollection>
+      </returnType>
+      <transactionType>NotSupported</transactionType>
+      <isExport>false</isExport>
+      <arguments>
+        <argument>
+          <description>
+            <zh-CN>用户ID(""表示当前用户)</zh-CN>
+          </description>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>userId</name>
+          <dataType>
+            <basicType>String</basicType>
+            <isCollection>false</isCollection>
+          </dataType>
+        </argument>
+      </arguments>
+    </operation>
+    <operation>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>获取已阅任务个数</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>GetFinishedMessageCount</name>
+      <returnType>
+        <basicType>Integer</basicType>
+        <isCollection>false</isCollection>
+      </returnType>
+      <transactionType>NotSupported</transactionType>
+      <isExport>false</isExport>
+      <arguments>
+        <argument>
+          <description>
+            <zh-CN>用户ID(""表示当前用户)</zh-CN>
+          </description>
+          <isInherited>false</isInherited>
+          <alias />
+          <isUserDefine>false</isUserDefine>
+          <name>userId</name>
+          <dataType>
+            <basicType>String</basicType>
+            <isCollection>false</isCollection>
+          </dataType>
+        </argument>
+      </arguments>
+    </operation>
+  </operations>
+</service>

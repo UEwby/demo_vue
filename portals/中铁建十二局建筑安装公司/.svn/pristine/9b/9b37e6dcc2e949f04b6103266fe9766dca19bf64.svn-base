@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entity>
+  <description />
+  <isInherited>false</isInherited>
+  <alias>
+    <zh-CN>TaskToDoList</zh-CN>
+  </alias>
+  <isUserDefine>false</isUserDefine>
+  <name>TASKTODOLISTPoco</name>
+  <sysVersion>1.0.0.0</sysVersion>
+  <isObsolete>false</isObsolete>
+  <namespace>GTP.PortalDataService.WorkFlow</namespace>
+  <properties>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias />
+      <isUserDefine>false</isUserDefine>
+      <name>Id</name>
+      <dataType>
+        <basicType>Long</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias />
+      <isUserDefine>false</isUserDefine>
+      <name>Title</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias />
+      <isUserDefine>false</isUserDefine>
+      <name>Name</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias />
+      <isUserDefine>false</isUserDefine>
+      <name>NewTime</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+  </properties>
+</entity>

@@ -1,0 +1,494 @@
+<template>
+  <div class="homepage">
+    <div class="home-left">
+      <div class="flex-between">
+        <el-carousel class="slide" trigger="click" height="300px" indicator-position="none">
+          <el-carousel-item v-for="item in IRSData" :key="item.id" class="img-container">
+            <a :href="item.openUrl">
+              <img :src="item.image"/>
+            </a>
+            <span class="title" v-text="item.title"></span>
+          </el-carousel-item>
+        </el-carousel>
+        <KP class="news" :codeFL="GSXWV" :openUrl="GSXWUrl" title="公司新闻"/>
+      </div>
+      <div class="flex-between">
+        <span class="news-more"  @click="openPanel('RWZX',moreUrl,'待办待阅',true)">更多</span>
+        <el-tabs v-model="activeName" @tab-click="handleClick" class="tabs-wrap">
+          <el-tab-pane label="待办待阅" name="first">
+            <ul class="card-body">
+              <li v-for="item in taskDBDY" :key="item.Id" @click="clickTitle(item)" style="cursor:pointer" >
+                <a class="title">{{item.Title}}</a>
+                <span class="opcation">
+                  <span @click="SendMsg(item.Id)">发送</span>
+                  <span>退回</span>
+                </span>
+                <span class="date">{{item.NewTime}}</span>
+                <span class="date">{{item.Name}}</span>
+              </li>
+            </ul>
+          </el-tab-pane>
+          <el-tab-pane label="已办已阅" name="second">
+            <ul class="card-body">
+              <li v-for="item in taskYBYY" :key="item.Id" @click="clickTitle(item)" style="cursor:pointer">
+                <a class="title">{{item.Title}}</a>
+                <span class="opcation">
+                  <span>发送</span>
+                  <span>退回</span>
+                </span>
+                <span class="date">{{item.NewTime}}</span>
+                <span class="date">{{item.Name}}</span>
+              </li>
+            </ul>
+          </el-tab-pane>
+        </el-tabs>
+      </div>
+      <div class="flex-between" style="justify-content: space-between;">
+        <KP class="dangjian" :codeFL="DJZCV" :openUrl="DJZCUrl" title="党建之窗"/>
+        <KP class="spokes" :codeFL="LDJHV" :openUrl="LDJHUrl" title="领导讲话"/>
+      </div>
+    </div>
+    <div class="home-right">
+      <KP :codeFL="TZGGV" :openUrl="TZGGRrl"  title="通知公告"/>
+      <div class="links">
+        <div class="link link1">
+          <a target="_blank" href="GB/LK/IRS/IndexPortlList/IndexPortlList.aspx?instanceId=100401&frameId=2" title="集团公司最新信息">集团公司最新信息</a>
+        </div>
+        <div class="link link2">
+          <a target="_blank" href="/GB/LK/IRS/IndexPortlList/IndexPortlList.aspx?instanceId=110650&frameId=103205">建安风采</a>
+        </div>
+        <div class="link link3">
+          <a target="_blank" href="http://read.bookan.com.cn/zt12jja">电子书屋</a>
+        </div>
+        <div class="link link4">
+          <a target="_self" @click="skip">常用链接</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import KP from '../components/KP'
+export default {
+  name: 'Homepage',
+  data () {
+    return {
+      taskDBDY: [], // 待办待阅
+      taskYBYY: [], // 已办已阅
+      IRSData: [], // 图片轮播
+      activeName: 'first',
+      GSXWV: 'JAGSXXFB',
+      TZGGV: 'JAGSTZGG11', // 通知公告
+      DJZCV: 'JAGSDJZC', // 党建之窗
+      LDJHV: 'JAGSLDJH', // 领导讲话
+      JAFCUrl: '/GB/LK/IRS/IndexPortlList/IndexPortlList.aspx?instanceId=110650&frameId=103205', // 建安风采
+      DJZCUrl: '/GB/LK/IRS/IndexPortlList/IndexPortlList.aspx?instanceId=110649&frameId=103205', // 党建之窗
+      LDJHUrl: '/GB/LK/IRS/IndexPortlList/IndexPortlList.aspx?instanceId=110648&frameId=103205', // 领导讲话
+      GSXWUrl: '/GB/LK/IRS/IndexPortlList/IndexPortlList.aspx?instanceId=110644&frameId=103205', // 公司新闻
+      TZGGUrl: '/GB/LK/IRS/IndexPortlList/IndexPortlList.aspx?instanceId=110645&frameId=103205'
+    }
+  },
+  components: {KP},
+  methods: {
+    loadConfig: function () {
+      const self = this
+      this.$http.get(' ').then(function (response) {
+        self.GSXWV = response.data.GSXWV[0].value
+        self.TZGGV = response.data.TZGGV[0].value
+        self.TZGGV = response.data.TZGGV[0].value
+        self.DJZCV = response.data.DJZCV[0].value
+        self.LDJHV = response.data.LDJHV[0].value
+        self.GSXWUrl = response.data.GSXWUrl[0].value // 公司新闻
+        self.TZGGUrl = response.data.TZGGUrl[0].value// 通知公告
+        self.JAFCUrl = response.data.JAFCUrl[0].value// 建安风采
+        self.DJZCUrl = response.data.DJZCUrl[0].value// 党建之窗
+        self.LDJHUrl = response.data.LDJHUrl[0].value// 领导讲话
+        self.loadCloumn('ins_3901_110643')
+      }).catch(function (error) {
+        console.log(error)
+      })
+    },
+    handleClick (tab, event) {
+      console.log(tab, event)
+    },
+    skip () {
+      this.openPanel('tablelinks', '/links', '常用链接', true)
+    },
+    getDBDY: function () {
+      let self = this
+      self.$http({
+        type: 'post',
+        url: '/action.ashx',
+        params: {
+          controller: 'GTP.PortalDataService.WorkFlow.TaskController',
+          action: 'GetToDoList',
+          args: '[' + 8 + ']'
+        }
+      }).then(function (response) {
+        debugger
+        self.taskDBDY = response.data.Data
+      }).catch(function (error) {
+        console.log(error)
+      })
+    },
+    getYBYY: function () {
+      let self = this
+      self.$http({
+        type: 'post',
+        url: '/action.ashx',
+        params: {
+          controller: 'GTP.PortalDataService.WorkFlow.TaskController',
+          action: 'GetFinishedList',
+          args: '[' + 8 + ']'
+        }
+      }).then(function (response) {
+        self.taskYBYY = response.data.Data
+      }).catch(function (error) {
+        console.log(error)
+      })
+    },
+    loadCloumn: function (d) {
+      // if (IRSId.length > 0) {
+      console.log(d)
+      const self = this
+      this.$http({
+        type: 'post',
+        url: '/action.ashx',
+        params: {
+          controller: 'GB.LK.IRS.XXJHPage',
+          action: 'GetIRSData',
+          args: '["ins_3901_110643"]'
+        }
+      }).then(function (response) {
+        debugger
+        const dd = JSON.parse(response.data.Data)
+        if (dd.template) {
+          var div = document.createElement('div')
+          div.innerHTML = dd.template
+          var arr = div.getElementsByClassName('marquee-item')[0].getElementsByTagName('td')
+          let temp = []
+          for (var i = 0; i < arr.length; i++) {
+            temp.push(self.stringToJson(arr[i]))
+          }
+          self.IRSData = temp
+        } else {
+          self.IRSData = []
+        }
+      }).catch(function (error) {
+        console.log(error)
+      })
+      // }
+    },
+    stringToJson: function (str) {
+      const id = str.getElementsByTagName('a')[0].id
+      const name = str.getElementsByTagName('div')[0].innerText
+      const title = str.getElementsByTagName('div')[0].innerText
+      const image = str.getElementsByTagName('img')[0].src// .replace('8080', '8888')// 需要替换
+
+      let openUrl = str.getElementsByTagName('a')[0].onclick.toString().split("',")[2]
+      openUrl = openUrl.substring(1, openUrl.length)
+      const temp = {id: id, name: name, title: title, openUrl: openUrl, image: image}
+      return temp
+    },
+    clickTitle (item) {
+      let id = item.Id
+      let Title = item.Title
+      let self = this
+      this.$http({
+        type: 'post',
+        url: '/action.ashx',
+        params: {
+          controller: 'GTP.Workflow.TaskMessage.TaskMessage',
+          action: 'GetTaskURL',
+          args: '[' + id + ']'
+        }
+      }).then(function (result) {
+        if (result.status === 200 && result.data.IsSuccess) {
+          let url = self.getUrl(result.data.Data.urlTemplate, id, true)
+          self.openPanel(id, url, Title, true)
+        } else {
+        }
+      })
+        .catch(function (status, data) {
+        })
+    },
+    getUrl (sUrlTemplate, taskid, isPortal) {
+      const url1 = '/Workflow/Task_Process.aspx'
+      if (!sUrlTemplate) { sUrlTemplate = url1 } else if (sUrlTemplate.indexOf('Task_Process') === 0) { sUrlTemplate = '/WorkFlow/' + sUrlTemplate }
+      var url = sUrlTemplate
+      if (isPortal) {
+        if ((url.indexOf('http:') < 0) && (url.indexOf('https:') < 0)) {
+          var gtpURL = document.location.href.split('/')
+          gtpURL = gtpURL[0] + '//' + gtpURL[2] + '//'
+          url = gtpURL + url
+        }
+      } else {
+        if (url.indexOf('/WorkFlow') < 0) { url = '..' + url }
+      }
+      url += ((url.indexOf('?taskID=') > -1) || (url.indexOf('&taskID=') > -1)) ? '' : ((url.indexOf('?') === -1 ? '?' : '&') + 'taskID=' + taskid)
+
+      return url
+    }
+  },
+  mounted () {
+    var newItem = document.createElement('LI')
+    newItem.className = 'dangjian-bg'
+    this.$el.querySelector('.dangjian').querySelector('.card-body').insertBefore(newItem, this.$el.querySelector('.dangjian').querySelector('li'))
+    this.loadCloumn()
+    this.getDBDY()
+    this.getYBYY()
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="Less">
+  *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  .homepage{
+    /*max-width: 1600px;*/
+    /*min-width: 923px;*/
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    .home-left{
+      width: 70%;
+      .flex-between{
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+        position: relative;
+        .slide{
+          width: 41.8%;
+          position: relative;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          height: 300px;
+          .img-container{
+            /*height: 300px;*/
+          }
+          .title{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 47px;
+            line-height: 47px;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(0,0,0,0.3);
+            display: block;
+          }
+          a{
+            /*display: block;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+            img{
+              width: 100%;
+              height: auto;
+              margin: 0 auto;
+              line-height: 300px;
+            }
+          }
+        }
+        .news{
+          width: 58.2%;
+          padding-left: 4.5%;
+          border-left: none;
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+        }
+        .dangjian{
+          width: 41%;
+          .card-body{
+            li{
+              .title{
+                flex: 1 1;
+              }
+              .date{
+                width: 0;
+                flex-basis: 100px;
+              }
+            }
+          }
+        }
+       .spokes{
+         /*margin-left: 20px;*/
+         width: 57%;
+        }
+      }
+      .tabs-wrap{
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid #EBEBEB;
+        border-radius: 5px;
+        font-size: 14px;
+        padding: 18px 22px 0;
+        .card-body{
+          .date{
+            color: #A4A4A4;
+            flex-basis: 110px;
+            text-align: right;
+          }
+          .opcation{
+            color: #2373c8;
+            cursor: pointer;
+            width: 70px;
+            display: flex;
+            justify-content: space-between;
+          }
+          li{
+            display: flex;
+            justify-content: space-between;
+            height: 19px;
+            margin: 19px 0;
+            color: #2373c8;
+            .title{
+              position: relative;
+              display: block;
+              padding-left: 15px;
+              flex: 5 1;
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
+              &:before {
+                position: absolute;
+                top: 8px;
+                left: 0;
+                width: 4px;
+                height: 3px;
+                background-color: #595959;
+                content: '';
+                display: block;
+              }
+            }
+          }
+
+        }
+      }
+      .news-more{
+        position: absolute;
+        right: 22px;
+        top: 25px;
+        font-size: 12px;
+        color: #bfbfbf;
+        cursor: pointer;
+        z-index: 2;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    .home-right{
+      width: 30%;
+      padding-left: 20px;
+    }
+    .links{
+      .link{
+        width: 100%;
+        height: 140px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: solid 1px #ebebeb;
+        margin-top: 20px;
+        background-repeat:no-repeat ;
+        background-position: 33px 38px;
+        background-size: 64px 64px;
+        display: flex;
+        align-items: center;
+        text-indent: 121px;
+        a{
+          text-decoration: none;
+          font-size: 32px;
+          overflow: hidden;
+          height: 42px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+      .link1{
+        background-image: url("../assets/images/5.png");
+        a{
+          color: #17aefb;
+        }
+      }
+      .link2{
+        background-image: url("../assets/images/3.png");
+        a{
+          color: #4d76ed;
+        }
+      }
+      .link3{
+        background-image: url("../assets/images/6.png");
+        a{
+          color: #79e0db;
+        }
+      }
+      .link4{
+        background-image: url("../assets/images/4.png");
+        a{
+          color: #816ce6;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 940px){
+    .homepage{
+      display: block;
+      .home-left{
+        width: 100%;
+      }
+      .home-right{
+        width: 100%;
+        .links{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .link{
+          width: 49%;
+        }
+      }
+    }
+  }
+</style>
+<style>
+  .homepage .tabs-wrap{
+    width: 100%
+  }
+  .homepage .el-tabs__nav-wrap::after{
+    height: 1px;
+  }
+  .homepage .el-tabs__item.is-active, .el-tabs__item:hover{
+    color: #2373C8;
+  }
+  .homepage .el-tabs__item{
+    color: #BFBFBF;
+    font-size: 16px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 17px;
+    /*margin: 0 4px;*/
+  }
+  .homepage .el-tabs__active-bar{
+    background-color: #2373C8;
+    padding: 0 4px;
+    left: -4px;
+  }
+  .homepage .el-tabs__header{
+    margin-bottom: 0;
+  }
+  .homepage .el-tabs__nav-scroll{
+    position: relative;
+  }
+  .dangjian .card-body li .title {
+    flex: 1 1 !important;
+  }
+  .dangjian .card-body li .date{
+   /* width: 0 !important;
+    flex-basis: 0 !important;*/
+  }
+</style>

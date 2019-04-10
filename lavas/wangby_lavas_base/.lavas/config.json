@@ -1,0 +1,35 @@
+{
+    "buildVersion": 1554081815043,
+    "build": {
+        "ssr": false,
+        "publicPath": "/",
+        "compress": true,
+        "cssExtract": true
+    },
+    "middleware": {
+        "all": [],
+        "server": [],
+        "client": []
+    },
+    "router": {
+        "mode": "history",
+        "base": "/",
+        "pageTransition": {
+            "type": "fade",
+            "transitionClass": "fade"
+        }
+    },
+    "errorHandler": {
+        "defaultErrorMessage": "Internal Server Error",
+        "showRealErrorMessage": false,
+        "errorPath": "/error"
+    },
+    "serviceWorker": {
+        "enable": true,
+        "swDest": "D:\\Dev\\lavas\\wangby_lavas_base\\dist\\service-worker.js"
+    },
+    "skeleton": {
+        "enable": true,
+        "asyncCSS": true
+    }
+}

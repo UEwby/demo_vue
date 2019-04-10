@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entity>
+  <description />
+  <isInherited>false</isInherited>
+  <alias>
+    <zh-CN>数据字典</zh-CN>
+  </alias>
+  <isUserDefine>false</isUserDefine>
+  <name>DictPoco</name>
+  <sysVersion>1.0.0.0</sysVersion>
+  <isObsolete>false</isObsolete>
+  <namespace>GTP.PortalDataService.WorkFlow</namespace>
+  <properties>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>主键</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>Key</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+    <genericProperty>
+      <description />
+      <isInherited>false</isInherited>
+      <alias>
+        <zh-CN>值</zh-CN>
+      </alias>
+      <isUserDefine>false</isUserDefine>
+      <name>Value</name>
+      <dataType>
+        <basicType>String</basicType>
+        <isCollection>false</isCollection>
+      </dataType>
+      <isMultilingual>false</isMultilingual>
+    </genericProperty>
+  </properties>
+</entity>

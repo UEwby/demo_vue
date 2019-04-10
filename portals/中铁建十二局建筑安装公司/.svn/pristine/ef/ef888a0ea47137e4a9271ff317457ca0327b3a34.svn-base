@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GTP.Audit.API</name>
+    </assembly>
+    <members>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.ModuleId">
+            <summary>
+            默认取审计操作所属的业务组件编码
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.ModuleTreeId">
+            <summary>
+            审计定义树节点编码
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.ParentModuleName">
+            <summary>
+            父模块名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.FullModuleName">
+            <summary>
+            模块全路径名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.OperateFuncName">
+            <summary>
+            操作函数名
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.OperateName">
+            <summary>
+            操作别名
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.OperateType">
+            <summary>
+            查看
+            新增
+            修改
+            删除
+            执行
+            数据无关
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.EnableDefaultPlugin">
+            <summary>
+            是否启用默认的审计插件
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.IsAutoAudit">
+            <summary>
+            是否通过拦截器自动记录审计
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.Status">
+            <summary>
+            删除标识
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.ExtField1">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.ExtField2">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.ExtField3">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.ObjType">
+            <summary>
+            0操作
+            1权限项
+            2业务组件
+            3自定义
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.IsAuditController">
+            <summary>
+            是否为审计配置表中的数据
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.FullCode">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.AuditingLevel">
+            <summary>
+            Record = 1, 记录级
+                    Feild = 2,字段级
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.AssemblyName">
+            <summary>
+            程序集名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.ClassFullName">
+            <summary>
+            类全名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.MethodName">
+            <summary>
+            方法名
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.AuditDefinitionDetail">
+            <summary>
+            审计详细定义
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.AuditDefinition.Switch">
+            <summary>
+            审计开关
+            </summary>
+        </member>
+        <member name="F:GTP.Audit.API.Entities.AuditOperateType.Browser">
+            <summary>
+            查看
+            </summary>
+        </member>
+        <member name="F:GTP.Audit.API.Entities.AuditOperateType.Add">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:GTP.Audit.API.Entities.AuditOperateType.Update">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="F:GTP.Audit.API.Entities.AuditOperateType.Delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="F:GTP.Audit.API.Entities.AuditOperateType.Excute">
+            <summary>
+            执行
+            </summary>
+        </member>
+        <member name="F:GTP.Audit.API.Entities.AuditOperateType.Independence">
+            <summary>
+            数据无关
+            </summary>
+        </member>
+        <member name="F:GTP.Audit.API.Entities.AuditOperateType.Undefined">
+            <summary>
+            未定义
+            </summary>
+        </member>
+        <member name="T:GTP.Audit.API.Entities.EvidenceInfo">
+            <summary>
+            审计凭据
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.UserId">
+            <summary>
+            用户编码
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.UserCode">
+            <summary>
+            用户账号
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.DeptId">
+            <summary>
+            部门编码
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.DeptName">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.FullDeptId">
+            <summary>
+            部门全路径
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.FullDeptName">
+            <summary>
+            部门全路径名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.ModuleId">
+            <summary>
+            模块编码
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.ParentModuleName">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.FullModuleId">
+            <summary>
+            全路径模块编码
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.FullModuleName">
+            <summary>
+            全路径模块名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.OperateType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.FunctionName">
+            <summary>
+            操作函数名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.OperateName">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.OperateTime">
+            <summary>
+            操作时间
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.OperateHour">
+            <summary>
+            操作时间段
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.BusinessKey">
+            <summary>
+            如合同ID
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.BusinessText">
+            <summary>
+            如合同名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.ClientIP">
+            <summary>
+            用户IP
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.SessionID">
+            <summary>
+            会话ID
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.OperateDescription">
+            <summary>
+            操作描述
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.EntranceType">
+            <summary>
+            0：T平台登录
+            1：移动平台
+            2：广讯通
+            3：外部系统
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.EntranceText">
+            <summary>
+            登录入口描述
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.EntityName">
+            <summary>
+            实体名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.IsSucess">
+            <summary>
+            操作是否成功
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.IsExtraReportData">
+            <summary>
+            是否为辅助统计的额外数据
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.EvidenceDetails">
+            <summary>
+            审计凭据明细
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.EvidenceDetailsTemplate">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.ExtFiled1">
+            <summary>
+            扩展字段1
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.ExtFiled2">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.ExtFiled3">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.ExtFiled4">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceInfo.AuditCode">
+            <summary>
+            审计对象对应审计操作的编码
+            </summary>
+        </member>
+        <member name="T:GTP.Audit.API.Entities.EvidenceDetailInfo">
+            <summary>
+            审计凭据明细
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceDetailInfo.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceDetailInfo.KeyName">
+            <summary>
+            属性名
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceDetailInfo.KeyValue">
+            <summary>
+            修改后属性值
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceDetailInfo.KeyOldValue">
+            <summary>
+            修改前属性值
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceDetailInfo.KeyLable">
+            <summary>
+            标签名称
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceDetailInfo.KeyType">
+            <summary>
+            0 函数参数
+            1 函数返回值
+            2 主实体属性
+            </summary>
+        </member>
+        <member name="P:GTP.Audit.API.Entities.EvidenceDetailInfo.Evidence">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:GTP.Audit.Interface.IAuditCollector.Collect(System.String,System.String,System.String,System.String,System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,GTP.Audit.API.Entities.EvidenceDetailInfo[])">
+            <summary>
+             审计数据收集
+            </summary>
+            <param name="auditCode">审计编码-是否启用审计</param>
+            <param name="userId">用户编码</param>
+            <param name="userCode">用户登录名</param>
+            <param name="userName">用户名</param>
+            <param name="deptID">部门编码</param>
+            <param name="deptName">部门名称</param>
+            <param name="deptFullID">部门全路径编码</param>
+            <param name="deptFullName">部门全路径名称</param>
+            <param name="moduleID">模块编码</param>
+            <param name="moduleName">模块名称</param>
+            <param name="entityName">实体名称-区分不同业务数据表</param>
+            <param name="operaName">操作名称</param>
+            <param name="operaType">操作类型</param>
+            <param name="operaDecrip">操作描述</param>
+            <param name="businessKey">业务主键（如：合同编码 ）</param>
+            <param name="businessText">业务标题（如：合同名称）</param>
+            <param name="isSuccess">操作是否执行成功</param>
+            <param name="clientIP">用户IP</param>
+            <param name="sessionId">会话编码</param>
+            <param name="details">审计明细信息</param>
+        </member>
+        <member name="M:GTP.Audit.Interface.IAuditCollector.CollectByCallBack(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,GTP.Audit.Interface.AuditMessageHandler)">
+            <summary>
+            审计数据收集-带审计开关并自动获取上下文信息 
+            </summary>
+            <param name="auditCode">审计编码-是否启用审计</param>
+            <param name="moduleID">模块编码</param>
+            <param name="moduleName">模块名称</param>
+            <param name="entityName">实体名称-区分不同业务数据表</param>
+            <param name="operaName">操作名称</param>
+            <param name="operaType">操作类型</param>
+            <param name="businessKey">业务主键（如：合同编码 ）</param>
+            <param name="businessText">业务标题（如：合同名称）</param>
+            <param name="isSuccess">操作是否执行成功</param>
+            <param name="callbak">回调方法用来填充审计信息用</param>
+        </member>
+        <member name="M:GTP.Audit.Interface.IAuditCollector.CollectByCallBack(System.String,GTP.Audit.Interface.AuditMessageHandler)">
+            <summary>
+            审计数据收集-带审计开关通过回调填充审计信息 
+            </summary>
+            <param name="auditCode">审计编码-是否启用审计</param>
+            <param name="callbak">回调方法委托</param>
+            <param name="args">被审计操作参数</param>
+        </member>
+        <member name="M:GTP.Audit.Interface.IAuditCollector.CollectSyn(GTP.Audit.API.Entities.EvidenceInfo)">
+            <summary>
+            同步记录审计信息
+            </summary>
+            <param name="auditData"></param>
+        </member>
+        <member name="M:GTP.Audit.Interface.IAuditCollector.CollectAsyn(GTP.Audit.API.Entities.EvidenceInfo)">
+            <summary>
+            异步记录审计信息
+            </summary>
+            <param name="auditData"></param>
+        </member>
+        <member name="T:GTP.Audit.Interface.AuditMessageHandler">
+            <summary>
+            审计接口回调委托
+            </summary>
+            <param name="args">被审计操作参数</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

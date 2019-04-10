@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03C631EC-B6CE-403A-A380-64B14EA4D357}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GTP.PortalDataService.WebSite</RootNamespace>
+    <AssemblyName>GTP.PortalDataService.WebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+  <ItemGroup>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GTP.Runtime.Biz" />
+    <Reference Include="GTP.Runtime.Core" />
+    <Reference Include="GTP.Runtime.EntityService" />
+    <Reference Include="GTP.Runtime.DataService" />
+    <Reference Include="GTP.Runtime.DataObject" />
+    <Reference Include="GTP.Runtime.Metadata" />
+    <Reference Include="GTP.Runtime.WebUI" />
+    <Reference Include="GTP.Runtime.Common" />
+    <Reference Include="GTP.Runtime.WebControls" />
+    <Reference Include="GTP.Runtime.GSql" />
+    <Reference Include="Antlr3.Runtime" />
+    <Reference Include="Common.Logging" />
+    <Reference Include="Iesi.Collections" />
+    <Reference Include="LinFu.DynamicProxy" />
+    <Reference Include="NHibernate" />
+    <Reference Include="Remotion.Data.Linq" />
+    <Reference Include="Spring.Aop" />
+    <Reference Include="Spring.Core" />
+    <Reference Include="Spring.Data" />
+    <Reference Include="Spring.Data.NHibernate30" />
+    <Reference Include="Xstream.Core" />
+    <Reference Include="Ext.Net" />
+    <Reference Include="Ext.Net.Utilities" />
+    <Reference Include="Ibatis.DataMapper" />
+    <Reference Include="DevExpress.Charts.v11.1.Core" />
+    <Reference Include="DevExpress.Data.v11.1" />
+    <Reference Include="DevExpress.Utils.v11.1" />
+    <Reference Include="DevExpress.Web.v11.1" />
+    <Reference Include="DevExpress.XtraCharts.v11.1" />
+    <Reference Include="DevExpress.XtraCharts.v11.1.Web" />
+  </ItemGroup>
+  -->
+  <ItemGroup>
+    <Content Include="DataService\Ajax\Global.asax" />
+    <Content Include="Global.asax" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SingleOn\GetSSOStamp.disco" />
+    <Content Include="Web.config" />
+    <None Include="Web References\SingleOn\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataService\Ajax\Common.ashx.cs">
+      <DependentUpon>Common.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Ajax\FileDownLoad.ashx.cs">
+      <DependentUpon>FileDownLoad.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Ajax\FsAjax.ashx.cs">
+      <DependentUpon>FsAjax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Ajax\PCenterAjax.ashx.cs">
+      <DependentUpon>PCenterAjax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SingleOn\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\Images\" />
+    <Folder Include="Workspace\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataService\Ajax\Common.ashx" />
+    <Content Include="DataService\Ajax\FileDownLoad.ashx" />
+    <Content Include="DataService\Ajax\FsAjax.ashx" />
+    <Content Include="DataService\Ajax\PCenterAjax.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GTP.Runtime.GSql, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL" />
+    <Reference Include="GTP.Services.FileService.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL" />
+    <Reference Include="GTP.Services.GSqlWraperLite, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL" />
+    <Reference Include="GTP.Services.Identification.Context, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8ffd4fc774dc4cff, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:8888/WebService/Lk6SyncService/DirectToOthers/GetSSOStamp.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SingleOn\</RelPath>
+      <UpdateFromURL>http://localhost:8888/WebService/Lk6SyncService/DirectToOthers/GetSSOStamp.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>GTP_PortalDataService_WebSite_SingleOn_GetSSOStamp</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SingleOn\GetSSOStamp.wsdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>33317</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
