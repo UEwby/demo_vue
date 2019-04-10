@@ -161,7 +161,6 @@ ClientBin/
 *.dbproj.schemaview
 *.publishsettings
 node_modules/
-config/
 bower_components/
 
 # RIA/Silverlight projects
