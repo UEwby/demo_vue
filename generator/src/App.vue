@@ -1,19 +1,6 @@
 <template>
   <div id="app">
-    <h4 class="title"></h4>
-    <div class="content">
-      <Menu :theme="'light'" class="content-left">
-        <MenuItem name="1">文章管理</MenuItem>
-        <MenuItem name="2">文章管理</MenuItem>
-        <MenuItem name="3">文章管理</MenuItem>
-        <MenuItem name="4">文章管理</MenuItem>
-        <MenuItem name="5">文章管理</MenuItem>
-        <MenuItem name="6">文章管理</MenuItem>
-        <MenuItem name="7">文章管理</MenuItem>
-        <MenuItem name="8">文章管理</MenuItem>
-      </Menu>
-      <router-view class="content-right"/>
-    </div>
+    <router-view/>
   </div>
 </template>
 
@@ -24,22 +11,40 @@ export default {
 </script>
 
 <style>
+  html,
+  body {
+    font-family: "Microsoft YaHei","微软雅黑","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB",Arial,sans-serif;
+  }
 #app {
 }
-  .title {
-    height: 50px;
-    background: #3B8DEE url("assets/logo.jpg") no-repeat 0 0;
-  }
-  .content {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .content-left {
-    width: 230px;
-    height: calc(100vh - 50px);
-  }
-  .content-right {
-    padding: 20px;
-    flex: 1;
-  }
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+
+::-webkit-scrollbar {
+  width: 6px; /*对垂直流动条有效*/
+  height: 6px; /*对水平流动条有效*/
+}
+
+/*定义滚动条的轨道颜色、内阴影及圆角*/
+::-webkit-scrollbar-track{
+  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+  background-color: #ccc;
+  border-radius: 2px;
+}
+
+/*定义滑块颜色、内阴影及圆角*/
+::-webkit-scrollbar-thumb{
+  border-radius: 2px;
+  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+  background-color: #E8E8E8;
+}
+
+/*定义两端按钮的样式*/
+::-webkit-scrollbar-button {
+  /*background-color:cyan;*/
+}
+
+/*定义右下角汇合处的样式*/
+::-webkit-scrollbar-corner {
+  background:khaki;
+}
 </style>

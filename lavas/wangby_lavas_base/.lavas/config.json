@@ -1,10 +1,10 @@
 {
-    "buildVersion": 1554081815043,
+    "buildVersion": 1555220066367,
     "build": {
         "ssr": false,
         "publicPath": "/",
-        "compress": true,
-        "cssExtract": true
+        "compress": false,
+        "cssExtract": false
     },
     "middleware": {
         "all": [],
@@ -26,7 +26,7 @@
     },
     "serviceWorker": {
         "enable": true,
-        "swDest": "D:\\Dev\\lavas\\wangby_lavas_base\\dist\\service-worker.js"
+        "swDest": "D:\\Dev\\demo_vue\\lavas\\wangby_lavas_base\\dist\\service-worker.js"
     },
     "skeleton": {
         "enable": true,

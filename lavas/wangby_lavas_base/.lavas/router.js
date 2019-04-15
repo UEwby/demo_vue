@@ -2,34 +2,34 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
     
-import _9d49a922ebc8a6d77ca82c0a74289b98 from '@/pages/Appshell.vue';
+import _15552200663919d49a922ebc8a6d77ca82c0a74289b98 from '@/pages/Appshell.vue';
     
 
     
-import _d2462dcf0c7beccd286c658e08187914 from '@/pages/Error.vue';
+import _1555220066391d2462dcf0c7beccd286c658e08187914 from '@/pages/Error.vue';
     
 
     
-import _67830448037326425509e44bce7632b7 from '@/pages/Index.vue';
+import _155522006639167830448037326425509e44bce7632b7 from '@/pages/Index.vue';
     
 
 
 let routes = [
     {
         "path": "/appshell",
-        "component": _9d49a922ebc8a6d77ca82c0a74289b98,
+        "component": _15552200663919d49a922ebc8a6d77ca82c0a74289b98,
         "meta": {},
         "name": "appshell"
     },
     {
         "path": "/",
-        "component": _67830448037326425509e44bce7632b7,
+        "component": _155522006639167830448037326425509e44bce7632b7,
         "meta": {},
         "name": "index"
     },
     {
         "path": "/error",
-        "component": _d2462dcf0c7beccd286c658e08187914,
+        "component": _1555220066391d2462dcf0c7beccd286c658e08187914,
         "meta": {},
         "name": "error",
         "alias": "*"
