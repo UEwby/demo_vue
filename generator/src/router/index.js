@@ -25,7 +25,7 @@ export default new Router({
         {
           path: '/index/formData',
           name: 'formData',
-          component: (resolve) => require(['@/views/kongbaiye'], resolve)
+          component: (resolve) => require(['@/views/formData'], resolve)
         },
         {
           path: '/index/kongbaiye2',

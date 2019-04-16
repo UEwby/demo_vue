@@ -6,12 +6,12 @@
               class="content-left"
               @on-select="navigateTo"
               active-name="/index/list">
-          <menu-item name="/index/formData">管控首页</menu-item>
+          <menu-item name="/index/list">列表页面</menu-item>
+          <menu-item name="/index/formData">详情页面</menu-item>
           <menu-item name="/index/kongbaiye2">日常审批</menu-item>
           <menu-item name="/index/kongbaiye3">公文管理</menu-item>
           <menu-item name="/index/kongbaiye4">任务督办</menu-item>
           <menu-item name="/index/kongbaiye5">公文应用</menu-item>
-          <menu-item name="/index/list">财务流程</menu-item>
           <menu-item name="/index/kongbaiye6">信息发布</menu-item>
           <menu-item name="/index/kongbaiye7">文档资料</menu-item>
           <menu-item name="/index/kongbaiye8">新物品管理</menu-item>
@@ -36,17 +36,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .title {
     height: 50px;
-    background: #3B8DEE url("../assets/logo.jpg") no-repeat 0 0;
+    background: #3B8DEE url("../assets/logo.png") no-repeat 18px center;
   }
   .content {
     display: flex;
     justify-content: flex-start;
   }
   .content-left {
-    width: 230px;
+    /*width: 230px;*/
     height: calc(100vh - 50px);
     overflow: auto;
   }

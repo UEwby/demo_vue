@@ -1,0 +1,74 @@
+/* 修改element默认的message*/
+.el-message--info {
+  background: #ebf3fd !important;
+  border: 1px solid #d8e8fc !important;
+}
+.el-message--info .el-message__content {
+  color: #3b8dee !important;
+}
+.el-message--success {
+  background: #e8faef !important;
+  border: 1px solid #d1f5e0 !important;
+}
+.el-message--success .el-message__content {
+  color: #1bce65 !important;
+}
+.el-message--warning {
+  background: #fdf7ee !important;
+  border: 1px solid #fceedb !important;
+}
+.el-message--warning .el-message__content {
+  color: #ff943e !important;
+}
+.el-message--error {
+  background: #fef2f2 !important;
+  border: 1px solid #fee4e3 !important;
+}
+.el-message--error .el-message__content {
+  color: #f56b6b !important;
+}
+.el-message {
+  padding: 14px 18px !important;
+  min-width: 300px !important;
+  border-radius: 2px !important;
+  box-sizing: border-box !important;
+}
+.el-message .el-icon-error,
+.el-message .el-icon-warning,
+.el-message .el-icon-success {
+  color: #fff !important;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+}
+.el-message .el-message__content {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+.el-message .el-icon-warning:before {
+  content: "\E609" !important;
+}
+.el-message .el-message__icon {
+  width: 18px !important;
+  height: 18px !important;
+  background-position: center center !important;
+  background-size: 18px 18px !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+}
+
+.el-message .el-message__icon:before {
+  content: "" !important;
+}
+.el-message .el-icon-error {
+  background-image: url("../../assets/imgs/icon-error.png") !important;
+}
+.el-message .el-icon-warning {
+  background-image: url("../../assets/imgs/icon-warning.png") !important;
+}
+.el-message .el-icon-success {
+  background-image: url("../../assets/imgs/icon-success.png") !important;
+}
+.el-message .el-icon-info {
+  background-image: url("../../assets/imgs/icon-info.png") !important;
+}
+/* 修改element默认的message 结束*/

@@ -17,34 +17,15 @@ export default {
   }
 #app {
 }
-/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
-
-::-webkit-scrollbar {
-  width: 6px; /*对垂直流动条有效*/
-  height: 6px; /*对水平流动条有效*/
-}
-
-/*定义滚动条的轨道颜色、内阴影及圆角*/
-::-webkit-scrollbar-track{
-  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
-  background-color: #ccc;
-  border-radius: 2px;
-}
-
-/*定义滑块颜色、内阴影及圆角*/
-::-webkit-scrollbar-thumb{
-  border-radius: 2px;
-  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
-  background-color: #E8E8E8;
-}
-
-/*定义两端按钮的样式*/
-::-webkit-scrollbar-button {
-  /*background-color:cyan;*/
-}
-
-/*定义右下角汇合处的样式*/
-::-webkit-scrollbar-corner {
-  background:khaki;
-}
+  /* 自定义 chrome 的滚动条样式*/
+  /*==== 全局定义 ====*/
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E2E3E8;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 </style>

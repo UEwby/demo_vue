@@ -27,14 +27,14 @@
       </Button>
     </div>
     <Page :total="40" size="small" show-elevator show-sizer class="page-top"/>
-    <Table :columns="columns1" :data="data1" height="440" border ref="selection"></Table>
+    <Table :tooltip="true" :ellipsis="true" width="100%" :columns="columns1" :data="data1" min-height="440" border ref="selection"></Table>
     <Page :total="40" size="small" show-elevator show-sizer class="page-bottom"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'list',
   data () {
     return {
       columns1: [
@@ -65,7 +65,23 @@ export default {
         },
         {
           title: '事由',
-          key: 'sy'
+          key: 'sy',
+          render: (h, params) => {
+            return h('div', [
+              h('span', {
+                style: {
+                  display: 'inline-block',
+                  width: '100%',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap'
+                },
+                domProps: {
+                  title: params.row.sy
+                }
+              }, params.row.sy)
+            ])
+          }
         }
       ],
       data1: [
@@ -74,98 +90,140 @@ export default {
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，故致新员工：需采购设备，但由于目前库房设备不足，故致新员工：需采购设备，但由于目前库房设备不足，故致新员工：需采购设备，但由于目前库房设备不足，故'
+        },
+        {
+          name: '林敬波',
+          age: '国际事业部',
+          address: '2019-01-01 12:22:25',
+          hj: '3,234,20',
+          sy: '病假'
+        },
+        {
+          name: '李国兴',
+          age: '财务部',
+          address: '2016-01-01 12:22:25',
+          hj: '1,234,20',
+          sy: '事假'
+        },
+        {
+          name: '林敬波',
+          age: '产品重心',
+          address: '2019-01-01 12:22:25',
+          hj: '234,20',
+          sy: '年假'
+        },
+        {
+          name: '王永泉',
+          age: '项目二部',
+          address: '2019-01-01 12:22:25',
+          hj: '234,20',
+          sy: '病假'
+        },
+        {
+          name: '林敬波',
+          age: '国际事业部',
+          address: '2019-01-01 12:22:25',
+          hj: '10,234,20',
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         },
         {
           name: '王永泉',
           age: '行政部',
           address: '2019-01-01 12:22:25',
           hj: '10,234,20',
-          sy: '致新员工：需采购设备，但由于目前库房设备不足，故...'
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
+        },
+        {
+          name: '王永泉',
+          age: '行政部',
+          address: '2019-01-01 12:22:25',
+          hj: '10,234,20',
+          sy: '致新员工：需采购设备，但由于目前库房设备不足，'
         }
       ]
     }
@@ -184,7 +242,7 @@ export default {
   .page-top {
     padding: 8px 0;
     text-align: right;
-    border: 1px solid #e8eaec;
+    border: 1px solid #dcdee2;
     padding-right: 15px;
   }
   .page-top {
@@ -198,5 +256,14 @@ export default {
   }
   .ivu-icon-ios-log-out{
     transform: rotate(270deg);
+  }
+  .ivu-table-wrapper {
+    max-height: calc(100vh - 222px) !important;
+  }
+  .ivu-table-header thead tr th:nth-child(6){
+    border-right: none;
+  }
+  .ivu-table-body tbody tr td:nth-child(6){
+    border-right: none;
   }
 </style>
