@@ -117,8 +117,8 @@ export default {
   .ledger .lo-el-pagination-top,
   .ledger .lo-el-pagination-bottom {
     text-align: right;
-    border: 1px solid #EBEEF5;
-    padding: 5px;
+    border: 1px solid #E1E1E1;
+    padding: 5px 15px;
   }
   .ledger .lo-el-pagination-top {
     border-bottom: none;
