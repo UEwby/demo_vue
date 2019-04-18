@@ -1,0 +1,312 @@
+.x-panel-body
+{
+	overflow: visible;
+}
+.x-panel-bwrap
+{
+    overflow: visible;
+}
+
+.x-viewport
+{
+    overflow: auto;
+}
+body
+{
+    overflow: visible;
+}
+table.adjacent-table
+{
+    margin-top: -11px !important;
+    padding-top: 0px;
+}
+table.fixed-table-width{
+    width:690px;
+}
+.gtp-area .gtp-comp
+{
+    overflow: hidden;
+    vertical-align: middle; /*  margin: 1px 1px 0px 2px; word-break: break-all; */ /* overflow: hidden;      border-bottom: 1px solid; */
+    font-weight: normal;
+    font-family: arial, tahoma, helvetica, sans-serif;
+}
+
+.gtp-comp-wrap
+{
+    display: inline-block; /*border-bottom: 1px solid;*/
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: -1px\0;
+    margin-left: 1px\0;
+    margin-right: 1px\0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.gtp-span-hidden
+{
+    display: none !important;
+}
+
+span.gtp-comp.no-underline
+{
+    border-bottom: none;
+}
+
+.gtp-area .gtp-comp-wrap
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0px\0;
+}
+
+.gtp-cell
+{
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.gtp-area-selected
+{
+    background: #FFFC33;
+}
+
+span.gtp-comp
+{
+    display: inline-block;
+    border-bottom: 1px solid;
+    margin-bottom: 1px;
+    vertical-align: bottom;
+    margin-left: 2px;
+}
+
+.gtp-area-editor
+{
+    margin: 0px;
+    margin-top: 0px;
+    margin-top: 0px\0;
+    margin-left: -1px;
+}
+
+.gtp-area span.gtp-comp
+{
+    border-bottom: 0px;
+    margin-top: -2px;
+    margin-top: 2px\0;
+}
+
+.gtp-area p
+{
+    height: 23px;
+}
+
+.gtp-area
+{
+    min-height: 20px;
+}
+
+.gtp-dynform-border
+{
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td.gtp-comp.gtp-cell-active
+{
+    border-top: 1px double #508cdd !important;
+    border-bottom: 1px double #508cdd !important;
+    border-left: 1px double #508cdd !important;
+    border-right: 1px double #508cdd !important;
+    position: relative;
+}
+
+.gtp-dynform-body .x-form-text, .gtp-dynform-body .x-form-textarea, .gtp-dynform-body .x-form-field-wrap, .gtp-dynform-body .x-form-check-wrap
+{
+    /*position: absolute;*/
+    left: 1px;
+    /*border: 0px;*/
+    outerline: none !important;
+    background: none !important;
+    background-color: #fff !important;
+}
+.gtp-dynform-body .x-form-normal-field
+{
+    position: absolute;
+    border: 0px;
+}
+.gtp-comp-wrap .x-form-check-wrap, span.gtp-comp .x-form-check-wrap
+{
+    position: static;
+}
+.x-column-inner
+{
+    display: table-cell; 
+    vertical-align: middle;
+}
+.gtp-dynform-body .x-form-field-wrap .x-form-text, .gtp-dynform-body .x-form-radio-group .x-form-check-wrap, .gtp-dynform-body .x-form-check-group .x-form-check-wrap
+{
+    position: static !important;
+}
+.x-form-check-group 
+{
+	display: table-cell; 
+    vertical-align: middle;
+}
+td.gtp-comp .gtp-comp-wrap
+{
+    width: 100%;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 1.2em;
+    cursor: default;
+}
+
+.gtp-comp-wrap.currency-field, span.gtp-comp.currency-field
+{
+    //text-align: right;
+}
+
+span.gtp-comp-wrap.display-field
+{
+    white-space: pre-wrap;
+}
+
+.gtp-dynform-body
+{
+    height: auto !important;
+    border: 0px;
+    margin: auto;
+    font-size: 12px;
+}
+
+.gtp-dynform-body > p, .gtp-dynform-body > div
+{
+    margin: 0px 8px 0px 8px;
+}
+
+.gtp-dynform-body > table
+{
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 0px 8px 10px 8px;
+}
+
+.gtp-dynform-body td
+{
+    border: 1px solid transparent;
+    border-collapse: collapse;
+    padding: 5px 10px;
+}
+
+.gtp-dynform-body .td-no-tb-padding
+{
+    /*padding: 0 0 0 3px;*/
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.gtp-dynform-body .td-no-lr-padding
+{
+    padding-left: 3px;
+    padding-right: 0;
+}
+
+span.gtp-comp-wrap.multiline-text
+{
+    word-wrap: break-word;
+    display: block;
+    height: auto;
+    white-space: pre-wrap;
+}
+
+span.gtp-comp-wrap.web-editor
+{
+    display: block;
+    /*height: auto;*/
+}
+.x-form-html-editor-wrap
+{
+    position: absolute;
+}
+img.signimage
+{
+    width: 100%;
+    height: 100%;
+}
+
+.gtp-dynform-body em
+{
+    font-style: italic;
+}
+
+.gtp-dynform-body strong
+{
+    font-weight: bold;
+}
+
+.gtp-dynform-body textarea
+{
+    min-height: 16px;
+    height: auto;
+}
+
+.gtp-dynform-body .x-form-radio-group.x-form-focus, .gtp-dynform-body .x-form-check-group.x-form-focus
+{
+    border: none;
+}
+
+.gtp-dynform-body-doc .x-form-text, .gtp-dynform-body-doc .x-form-textarea {
+    display:none;
+}
+
+.gtp-dynform-body .gtp-comp .x-form-item, .gtp-dynform-body .gtp-comp .x-form-field
+{
+    font-size: inherit;
+    font-family: inherit;
+}
+
+
+#msgBox
+{
+    position: fixed;
+    top: 0px;
+    z-index: 10000;
+    width: 200px;
+    height: 25px;
+    background-color: #F9FF00;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: none;
+    font: normal 12px arial,tahoma,verdana,helvetica;
+    color: #f00;
+    border-radius: 5px;
+}
+
+#msgBox div
+{
+    height: 25px;
+    line-height: 25px;
+}
+
+
+.ref-link
+{
+    color: #0508FA;
+    cursor: pointer !important;
+}
+
+.ref-link:hover
+{
+    text-decoration: underline;
+}
+
+.gtp-comp.focus, .gtp-comp-wrap.focus
+{
+    /*border: 1px solid #f00!important;*/
+    background: url("/Common/images/edit.gif") no-repeat right top;
+}
+

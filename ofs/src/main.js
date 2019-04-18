@@ -14,6 +14,21 @@ import axiosPlugin from './api'
 import utils from './assets/utils'
 import 'babel-polyfill'
 import infiniteScroll from 'vue-infinite-scroll'
+import InputCom from '../src/components/Input/LOInput'
+import DateCom from '../src/components/Date/LODate'
+import LookupCom from '../src/components/Org/LOLookup'
+import '../src/assets/base.css'
+
+const COM = {
+  install: function (Vue) {
+    Vue.component('input-com', InputCom)
+    Vue.component('date-com', DateCom)
+    Vue.component('lookup-com', LookupCom)
+  }
+}
+
+Vue.use(COM)
+
 Vue.use(infiniteScroll)
 
 Vue.config.productionTip = false

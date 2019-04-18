@@ -8,7 +8,7 @@ Vue.use(Router)
 const routes = [
   {
     path: '/',
-    redirect: '/ledger'
+    redirect: '/demo'
   },
   {
     path: '/ledger',
@@ -20,6 +20,15 @@ const routes = [
     component: resolve => require(['@/views/ledger'], resolve)
   },
   {
+    path: '/detail',
+    name: 'detail',
+    tagName: '详情',
+    meta: {
+      unauthorized: true
+    },
+    component: resolve => require(['@/views/detail'], resolve)
+  },
+  {
     path: '/Login',
     name: 'Login',
     tagName: '认证首页',
@@ -27,6 +36,13 @@ const routes = [
       unauthorized: true
     },
     component: resolve => require(['@/views/login/Login'], resolve)
+  }, {
+    path: '/demo',
+    name: 'demo',
+    meta: {
+      unauthorized: true
+    },
+    component: resolve => require(['@/views/demo'], resolve)
   }
 ]
 
