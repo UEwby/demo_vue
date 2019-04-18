@@ -1,9 +1,5 @@
 <template>
   <div>
-    <el-tabs type="border-card">
-      <el-tab-pane label="项目一"></el-tab-pane>
-      <el-tab-pane label="项目二">项目二</el-tab-pane>
-    </el-tabs>
   </div>
 </template>
 <script>
@@ -13,7 +9,7 @@ export default {
   components: { Item1, Item2 },
   data () {
     return {
-      aaa: ''
+      currTabItem: 'Item1'
     };
   },
   methods: {
