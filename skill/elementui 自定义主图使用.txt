@@ -1,0 +1,27 @@
+element-ui 自定义主题方法：
+一、安装elementUI及sass-loader,node-sass
+// 安装element-ui
+$ npm i element-ui -S
+// 安装sass
+$ npm i sass-loader node-sass -D
+
+二、安装element-ui的自定义主题工具
+// 安装主题工具
+$ npm i element-theme -g
+// 安装chalk主题
+$ npm i element-theme-chalk -D
+
+三、初始化变量文件
+$ et -i  //默认生成element-variables.scss
+> ✔ Generator variables file
+
+四、修改主题变量
+修改主题变量: 如$--color-primary: red !default;
+
+五、编译主题
+$ et
+> ✔ build theme font
+> ✔ build element theme
+
+六、引入自定义主题
+import '../theme/index.css'

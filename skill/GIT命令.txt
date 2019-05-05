@@ -1,0 +1,32 @@
+下载 git clone https地址|
+
+更新 git pull origin master
+
+提交：git add .
+      git commit -m '备注'
+      git push origin master
+
+
+
+创建分支：
+git checkout -b <分支名称>
+
+先提交到自己分支上：
+       git add .
+      git commit -m '备注'
+      git push origin <分支名称>
+
+再切到要同步的分支上
+     git checkout develop
+     git pull origin develop
+     将自己的分支同步到正式分支上
+ git merge daiban -m '刚做了已办待办功能'
+git push origin develop
+在切回自己分支上
+git checkout daiban
+然后将正式分支同步到自己分支上
+git merge develop -m '将Dev合并到自己分支' 
+//git pull origin develop
+
+
+     
