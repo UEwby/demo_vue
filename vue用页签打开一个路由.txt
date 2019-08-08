@@ -1,0 +1,31 @@
+let feature = `top=0,left=0,width=${screen.availWidth},height=${screen.availHeight},toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,location=no,status=no,channelmode=yes`
+let routeData = this.$router.resolve({
+    path: '/detail',
+    query: {
+        htmlTitle: res.data.formName, // 页面标题
+        Id: row.id,
+        formId: this.queryParams.formId,
+        taskId: res.data.taskId,
+        state: 'STATE_CREATE',
+        moduleCode: res.data.moduleCode,
+        type: 'caogao'
+    }
+})
+if (this.getChromeVersion() === 36) {
+	window.open(routeData.href, '_blank', feature)
+} else {
+    window.open(routeData.href, '_blank')
+}
+//判断chrome36
+getChromeVersion () {
+      var arr = navigator.userAgent.split(' ')
+      var chromeVersion = ''
+      for (var i = 0; i < arr.length; i++) {
+        if (/chrome/i.test(arr[i])) { chromeVersion = arr[i] }
+      }
+      if (chromeVersion) {
+        return Number(chromeVersion.split('/')[1].split('.')[0])
+      } else {
+        return false
+      }
+    },
